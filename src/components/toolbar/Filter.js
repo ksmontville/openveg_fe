@@ -29,6 +29,13 @@ class Filter extends Component {
                 <label>Show Only Vegan Restaurants</label>
                 <input name="vegan" type="checkbox" value={this.state.vegan}
                        checked={this.state.vegan} onChange={this.handleChange}/>
+
+
+                <h4>
+                    NOTE: It may take up to 30 seconds for the API to send the data depending on when
+                    the process was last run.
+                </h4>
+
             </div>
         )
     }
