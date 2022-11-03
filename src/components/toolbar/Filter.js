@@ -35,6 +35,9 @@ class Filter extends Component {
                     NOTE: It may take up to 30 seconds for the API to send the data depending on when
                     the process was last run.
                 </h4>
+                <h4>
+                    NOTE: Currently only have data for New Hampshire, New York, Massachusetts, and Vermont.
+                </h4>
 
             </div>
         )
