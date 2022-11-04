@@ -32,7 +32,7 @@ class Toolbar extends Component {
 
     render() {
         return(
-            <div>
+            <div className={""}>
                 <Search restaurantName={this.handleNameSearch} />
                 <StateSelect getSelectedState={this.handleStateSearch} vegan={this.state.vegan} submit={this.handleSubmit} />
                 <Filter isChecked={this.state.checked} vegan={this.handleVeganFilter}

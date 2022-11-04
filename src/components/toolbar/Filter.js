@@ -26,7 +26,7 @@ class Filter extends Component {
     render() {
         return (
             <div className={""}>
-                <div className={"text-center"}>
+                <div className={"flex flex-row items-center justify-center gap-2"}>
                     <label>Show Only Vegan Restaurants</label>
                     <input name="vegan" type="checkbox" value={this.state.vegan}
                            checked={this.state.vegan} onChange={this.handleChange}/>

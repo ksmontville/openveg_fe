@@ -16,3 +16,23 @@ code {
     monospace;
 }
 
+.App {
+  color: white;
+  background-image: url("../public/img/openveg-bg-sm.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media(min-width: 640px) {
+  .App {
+    background-image: url("../public/img/openveg-bg-md.jpg");
+  }
+}
+
+@media(min-width: 1024px) {
+  .App {
+    background-image: url("../public/img/openveg-bg-lg.jpg");
+  }
+}

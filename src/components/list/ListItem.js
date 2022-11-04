@@ -5,7 +5,8 @@ class ListItem extends Component {
     render() {
         const {restaurantData} = this.props
         return(
-            <li className={"m-8"} key={restaurantData.id}>
+
+            <li className={"text-center m-8"} key={restaurantData.id}>
                 <ul className={"leading-relaxed tracking-wide"}>
                     <li>
                         {restaurantData.name}
@@ -14,7 +15,7 @@ class ListItem extends Component {
                     {/*    {restaurantData.description}*/}
                     {/*</li>*/}
                     <li>
-                        <a href={restaurantData.web.toString()} target="_blank" rel="noreferrer">{restaurantData.web}</a>
+                        <a className={"text-green-200 underline"} href={restaurantData.web.toString()} target="_blank" rel="noreferrer">{restaurantData.web}</a>
                     </li>
                     <li>
                         {restaurantData.address}
@@ -28,6 +29,7 @@ class ListItem extends Component {
                     </li>
                 </ul>
             </li>
+
         )
     }
 }
