@@ -37,7 +37,7 @@ class Search extends Component {
                 <p className={"font-bold text-center text-xl"}>** THIS APP IS MINIMALLY FUNCTIONAL WITH ONGOING DEVELOPMENT **</p>
             <form className={"flex flex-col flex-nowrap items-center p-2 gap-y-2"} onSubmit={this.handleSubmit}>
                 <label>Search for a Restaurant by Name</label>
-                <input className={"w-2/3 md:w-1/3"} type="text" value={this.state.value} onChange={this.handleSearch} />
+                <input className={"text-black w-2/3 md:w-1/3"} type="text" value={this.state.value} onChange={this.handleSearch} />
                 <button className={"rounded-md w-1/4 bg-green-600 p-2 md:w-1/12"} type="submit">submit</button>
             </form>
 
