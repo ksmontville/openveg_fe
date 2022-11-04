@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import Header from './components/Header'
+// import Header from './components/Header'
 import Toolbar from './components/toolbar/Toolbar'
-import Contribute from './components/Contribute'
+// import Contribute from './components/Contribute'
 import Footer from './components/Footer'
 
 
