@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 class Footer extends Component {
     render() {
         return(
-            <h6>Kyle Montville, &copy;2022-2023</h6>
+            <div className={"p-2 text-center"}>
+                <p>Kyle Montville, &copy;2022-2023</p>
+            </div>
         )
     }
 }

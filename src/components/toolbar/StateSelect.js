@@ -60,10 +60,10 @@ class StateSelect extends Component {
             )
         })
         return(
-            <div>
-                <form>
-                    <label>Search by State</label>
-                    <select onChange={this.handleSelect}>
+            <div className={"m-4"}>
+                <form className={"flex flex-col justify-center items-center gap-y-2"}>
+                    <label className="">Search for a Restaurant by State</label>
+                    <select className={"w-2/3"} onChange={this.handleSelect}>
                         <option value="null" defaultValue="">---</option>
                         <option value="" defaultValue="">Show All</option>
                         {usStatesList}

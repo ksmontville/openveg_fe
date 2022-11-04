@@ -33,11 +33,12 @@ class Search extends Component {
 
     render() {
         return(
-            <div>
-            <form onSubmit={this.handleSubmit}>
-                <label>Search by Name</label>
-                <input type="text" value={this.state.value} onChange={this.handleSearch} />
-                <button type="submit">Search</button>
+            <div className={"m-4"}>
+                <p className={"text-center text-xl"}>** THIS APP IS MINIMALLY FUNCTIONAL WITH ONGOING DEVELOPMENT **</p>
+            <form className={"flex flex-col flex-nowrap items-center p-2 gap-y-2"} onSubmit={this.handleSubmit}>
+                <label>Search for a Restaurant by Name</label>
+                <input className={"w-2/3"} type="text" value={this.state.value} onChange={this.handleSearch} />
+                <button className={"rounded-md w-1/4 bg-blue-400"} type="submit">submit</button>
             </form>
 
             </div>

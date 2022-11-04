@@ -3,7 +3,11 @@ import React, { Component } from 'react'
 class Contribute extends Component {
     render() {
         return (
-            <h4>[Placeholder for Contribute component.]</h4>
+            <div>
+                <p className="text-2xl">
+                    [Placeholder for Contribute component.]
+                </p>
+            </div>
         )
     }
 }

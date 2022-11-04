@@ -25,19 +25,21 @@ class Filter extends Component {
 
     render() {
         return (
-            <div>
-                <label>Show Only Vegan Restaurants</label>
-                <input name="vegan" type="checkbox" value={this.state.vegan}
-                       checked={this.state.vegan} onChange={this.handleChange}/>
+            <div className={""}>
+                <div className={"text-center"}>
+                    <label>Show Only Vegan Restaurants</label>
+                    <input name="vegan" type="checkbox" value={this.state.vegan}
+                           checked={this.state.vegan} onChange={this.handleChange}/>
+                </div>
 
 
-                <h4>
+                <p className={"text-lg font-bold m-4"}>
                     NOTE: It may take up to 30 seconds for the API to send the data depending on when
-                    the process was last run.
-                </h4>
-                <h4>
+                    the process was last executed.
+                </p>
+                <p className={"text-lg font-bold m-4"}>
                     NOTE: Currently only have data for New Hampshire, New York, Massachusetts, and Vermont.
-                </h4>
+                </p>
 
             </div>
         )
