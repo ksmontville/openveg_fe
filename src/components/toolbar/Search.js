@@ -34,7 +34,7 @@ class Search extends Component {
     render() {
         return(
             <div className={"m-4"}>
-                <p className={"text-center text-xl"}>** THIS APP IS MINIMALLY FUNCTIONAL WITH ONGOING DEVELOPMENT **</p>
+                <p className={"font-bold text-center text-xl"}>** THIS APP IS MINIMALLY FUNCTIONAL WITH ONGOING DEVELOPMENT **</p>
             <form className={"flex flex-col flex-nowrap items-center p-2 gap-y-2"} onSubmit={this.handleSubmit}>
                 <label>Search for a Restaurant by Name</label>
                 <input className={"w-2/3"} type="text" value={this.state.value} onChange={this.handleSearch} />
