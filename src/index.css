@@ -26,20 +26,6 @@ code {
   background-position: center;
 }
 
-/*.nav-icon {*/
-/*  display: none;*/
-/*}*/
-
-/*.bar {*/
-/*  display: block;*/
-/*  background-color: white;*/
-/*  width: 24px;*/
-/*  height: 4px;*/
-/*  margin: 4px auto;*/
-/*}*/
-
-
-
 @media(min-width: 640px) {
   .App {
     background-image: url("../public/img/openveg-bg-md.png");
