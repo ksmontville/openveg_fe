@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import Toolbar from './components/toolbar/Toolbar'
 // import Contribute from './components/Contribute'
 import Footer from './components/Footer'
+import NavbarComponent from './components/NavbarComponent'
 
 
 class App extends Component {
@@ -10,28 +11,11 @@ class App extends Component {
         return (
             <div className={"App flex flex-col justify-center align-start min-h-screen"}>
                 <div className={"bg-green-600"}>
-
+                {/*Header*/}
                 </div>
 
-                <nav className={"leading-loose tracking-wide text-lg"}>
-                    <div className={"flex flex-row flex-nowrap justify-between items-center p-4"}>
-                        <ul>
-                            <li>
-                                OpenVeg
-                            </li>
-                        </ul>
-                        <ul className={"flex flex-row flex-nowrap justify-center items-center gap-x-4"}>
-                            <li>
-                                API
-                            </li>
-                            <li>
-                                Contribute
-                            </li>
-                            <li>
-                                Login
-                            </li>
-                        </ul>
-                    </div>
+                <nav className={""}>
+                    <NavbarComponent />
                 </nav>
 
                 <div className={""}>
@@ -42,7 +26,7 @@ class App extends Component {
                     {/*<Contribute />*/}
                 </div>
 
-                <div className={"bg-green-600 mt-auto"}>
+                <div className={"bg-green-600 border-t-4 mt-auto"}>
                     <Footer />
                 </div>
             </div>

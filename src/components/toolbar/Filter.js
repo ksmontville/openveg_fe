@@ -25,17 +25,10 @@ class Filter extends Component {
 
     render() {
         return (
-            <div className={""}>
-                <div className={"flex flex-row items-center justify-center gap-2"}>
-                    <label>Show Only Vegan Restaurants</label>
-                    <input name="vegan" type="checkbox" value={this.state.vegan}
-                           checked={this.state.vegan} onChange={this.handleChange}/>
-                </div>
-
-                <p className={"text-lg font-bold m-4"}>
-                    NOTE: Currently only have data for New Hampshire, New York, Massachusetts, and Vermont.
-                </p>
-
+            <div className={"flex flex-row items-center justify-center gap-2 mb-4"}>
+                <label>Show Only Vegan Restaurants</label>
+                <input name="vegan" type="checkbox" value={this.state.vegan}
+                       checked={this.state.vegan} onChange={this.handleChange}/>
             </div>
         )
     }
