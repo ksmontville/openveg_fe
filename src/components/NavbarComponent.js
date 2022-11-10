@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 class NavbarComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = {isExpanded: true}
+        this.state = {isExpanded: false}
 
         this.handleIsExpanded = this.handleIsExpanded.bind(this)
         this.handleClick = this.handleClick.bind(this)
