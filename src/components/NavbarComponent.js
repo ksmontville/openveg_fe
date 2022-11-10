@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 class NavbarComponent extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +12,6 @@ class NavbarComponent extends Component {
 
     handleIsExpanded() {
         this.setState({isExpanded: !this.state.isExpanded})
-        console.log(this.state.isExpanded)
     }
 
     handleClick (event) {

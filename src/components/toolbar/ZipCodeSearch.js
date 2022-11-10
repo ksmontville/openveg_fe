@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import ButtonComponent from '../ButtonComponent';
 
 const api_url = process.env.REACT_APP_API_URL
 
@@ -30,7 +31,7 @@ class ZipCodeSearch extends Component {
                 <form className={"flex flex-col flex-nowrap items-center p-2 gap-y-2"} onSubmit={this.handleSubmit}>
                     <label>Search by Zip Code</label>
                     <input className={"text-black w-2/3 md:w-1/3"} type="text" onChange={this.handleZip} placeholder="Enter 5-digit zip code..."/>
-                    <button className={"rounded-md w-1/4 bg-green-600 p-2 md:w-1/12"} type="submit">submit</button>
+                    <ButtonComponent name={"submit"} />
                 </form>
             </div>
         )

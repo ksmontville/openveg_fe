@@ -26,6 +26,20 @@ code {
   background-position: center;
 }
 
+.active {
+  border: solid white 2px;
+  background-color: darkgreen;
+}
+
+.active:hover {
+
+}
+
+input[type='checkbox']:checked:hover {
+  accent-color: darkgreen;
+  background-color: darkgreen;
+}
+
 @media(min-width: 640px) {
   .App {
     background-image: url("../public/img/openveg-bg-md.png");
