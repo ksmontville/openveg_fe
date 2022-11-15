@@ -17,7 +17,7 @@ class StateSelect extends Component {
 
     async handleSubmit() {
         this.props.getSelectedState(this.state.usState)
-        const response = await axios.get(`${api_url}/?state=${this.state.usState.toLowerCase()}&vegan=${this.props.vegan}`)
+        const response = await axios.get(`${api_url}/${this.props.type}/?state=${this.state.usState.toLowerCase()}&vegan=${this.props.vegan}`)
         const data = response.data
         this.props.submit(data)
     }

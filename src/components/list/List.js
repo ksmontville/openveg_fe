@@ -3,12 +3,12 @@ import ListItem from './ListItem'
 
 class List extends Component {
     render() {
-        const { data } = this.props
+        const { listData } = this.props
         return(
             <div>
                 <ul>
-                    {data.map(restaurant => (
-                        <ListItem restaurantData={restaurant} /> ))}
+                    {listData.map(item => (
+                        <ListItem listData={item} /> ))}
                 </ul>
             </div>
         )

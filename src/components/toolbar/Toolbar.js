@@ -11,7 +11,7 @@ class Toolbar extends Component {
     constructor(props) {
         super(props);
         this.state = {data: [], selectedState: "", vegan: false, nameSearch: false, zipSearch: false,
-            stateSearch: false, searchType: ""}
+            stateSearch: false, searchType: "restaurants", searchParam: "", searchZip: "", searchName: ""}
 
         this.toggleNameSearch = this.toggleNameSearch.bind(this)
         this.toggleZipSearch = this.toggleZipSearch.bind(this)
@@ -21,15 +21,16 @@ class Toolbar extends Component {
     }
 
     handleNameSearch = (childData) => {
-        this.setState({data: childData})
+        this.setState({data: childData, searchParam: "name", searchName: childData[0].name})
+        console.log(this.state.searchName)
     }
 
-    handleZipCodeSearch = (childData) => {
-        this.setState({data: childData})
+    handleZipCodeSearch = (childData, childZip) => {
+        this.setState({data: childData, searchParam: "zip", searchZip: childData })
     }
 
     handleStateSearch = (childData) => {
-        this.setState({selectedState: childData})
+        this.setState({selectedState: childData, searchParam: "state"})
     }
 
     handleVeganFilter = async (childData) => {
@@ -91,7 +92,7 @@ class Toolbar extends Component {
                         <ButtonComponent name={"Search by Name"} onClick={this.toggleNameSearch} />
 
                         <div className={`${this.state.nameSearch ? "" : "hidden"} w-full`}>
-                            <Search type={this.state.searchType} name={this.handleNameSearch} />
+                            <Search type={this.state.searchType} searchName={this.handleNameSearch} />
                         </div>
 
                     </div>
@@ -100,7 +101,7 @@ class Toolbar extends Component {
                         <ButtonComponent name={"Search by Zip Code"} onClick={this.toggleZipSearch}/>
 
                         <div className={`${this.state.zipSearch ? "" : "hidden"} w-full`}>
-                            <ZipCodeSearch zipCode={this.handleZipCodeSearch} />
+                            <ZipCodeSearch type={this.state.searchType} data={this.handleZipCodeSearch} zip={this.handleZipCodeSearch} />
                         </div>
 
                     </div>
@@ -109,14 +110,16 @@ class Toolbar extends Component {
                         <ButtonComponent name={"Search by State"} onClick={this.toggleStateSearch} />
 
                         <div className={`${this.state.stateSearch ? "" : "hidden"} w-full`}>
-                            <StateSelect getSelectedState={this.handleStateSearch} vegan={this.state.vegan} submit={this.handleSubmit} />
+                            <StateSelect type={this.state.searchType} getSelectedState={this.handleStateSearch}
+                                         vegan={this.state.vegan} submit={this.handleSubmit} />
                         </div>
                     </div>
 
-                    <Filter isChecked={this.state.checked} vegan={this.handleVeganFilter}
-                            veganData={this.handleVeganData} currentState={this.state.selectedState}/>
+                    <Filter type={this.state.searchType} param={this.state.searchParam} zip={this.state.searchZip}
+                            isChecked={this.state.checked} vegan={this.handleVeganFilter}
+                            veganData={this.handleVeganData} currentState={this.state.selectedState} currentName={this.state.searchName} />
 
-                    <List data={this.state.data} />
+                    <List listData={this.state.data} />
 
                 </div>
 

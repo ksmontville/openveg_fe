@@ -19,9 +19,9 @@ class Search extends Component {
 
     async handleSubmit(event) {
         event.preventDefault()
-        const response = await axios.get(`https://openveg-api.herokuapp.com/${this.props.type}/name/${this.titleCase(this.state.value)}`)
+        const response = await axios.get(`${api_url}/${this.props.type}/name/${this.titleCase(this.state.value)}`)
         const data = response.data
-        this.props.name(data)
+        this.props.searchName(data)
     }
 
     titleCase(str) {

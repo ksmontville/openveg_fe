@@ -3,28 +3,28 @@ import React, { Component } from 'react'
 class ListItem extends Component {
 
     render() {
-        const {restaurantData} = this.props
+        const {listData} = this.props
         return(
 
-            <li className={"text-center m-8"} key={restaurantData.id}>
+            <li className={"text-center m-8"} key={listData.id}>
                 <ul className={"leading-relaxed tracking-wide"}>
                     <li>
-                        {restaurantData.name}
+                        {listData.name}
                     </li>
                     {/*<li>*/}
                     {/*    {restaurantData.description}*/}
                     {/*</li>*/}
                     <li>
-                        <a className={"text-green-200 underline"} href={restaurantData.web.toString()} target="_blank" rel="noreferrer">{restaurantData.web}</a>
+                        <a className={"text-green-200 underline"} href={listData.web.toString()} target="_blank" rel="noreferrer">{listData.web}</a>
                     </li>
                     <li>
-                        {restaurantData.address}
+                        {listData.address}
                     </li>
                     <li>
-                        {restaurantData.city}, {restaurantData.state} {restaurantData.zip}
+                        {listData.city}, {listData.state} {listData.zip}
                     </li>
                     <li>
-                        {restaurantData.vegan ? "Vegan" : "Vegetarian"}
+                        {listData.vegan ? "Vegan" : "Vegetarian"}
                         {/*Vegan: {restaurantData.vegan.toString()}*/}
                     </li>
                 </ul>

@@ -7,7 +7,7 @@ const api_url = process.env.REACT_APP_API_URL
 class ZipCodeSearch extends Component {
     constructor(props) {
         super(props);
-        this.state = {url: "", zip: ""}
+        this.state = {zip: ""}
 
         this.handleZip = this.handleZip.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -19,9 +19,9 @@ class ZipCodeSearch extends Component {
 
      async handleSubmit(event) {
         event.preventDefault()
-        const response = await axios.get(`${api_url}/?zip=${this.state.zip}`)
+        const response = await axios.get(`${api_url}/${this.props.type}/?zip=${this.state.zip}`)
         const data = response.data
-        this.props.zipCode(data)
+        this.props.data(data)
     }
 
     render() {
