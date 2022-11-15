@@ -10,11 +10,13 @@ import ZipCodeSearch from './ZipCodeSearch'
 class Toolbar extends Component {
     constructor(props) {
         super(props);
-        this.state = {data: [], selectedState: "", vegan: false, nameSearch: false, zipSearch: false, stateSearch: false}
+        this.state = {data: [], selectedState: "", vegan: false, nameSearch: false, zipSearch: false,
+            stateSearch: false, searchType: ""}
 
         this.toggleNameSearch = this.toggleNameSearch.bind(this)
         this.toggleZipSearch = this.toggleZipSearch.bind(this)
         this.toggleStateSearch = this.toggleStateSearch.bind(this)
+        this.handleSearchType = this.handleSearchType.bind(this)
 
     }
 
@@ -40,6 +42,11 @@ class Toolbar extends Component {
 
     handleSubmit = (childData) => {
         this.setState({data: childData})
+    }
+
+    handleSearchType(event) {
+        this.setState({searchType: event.target.value})
+        console.log(this.state.searchType)
     }
 
     toggleNameSearch() {
@@ -68,9 +75,14 @@ class Toolbar extends Component {
                 <p className={"text-2xl text-center p-2 m-6"}>Find me...</p>
 
                 <div className={"search-select flex flex-row justify-center items-center gap-4 m-6"}>
-                    <CheckboxComponent name={"Restaurants"} value={"restaurant"} />
-                    <CheckboxComponent name={"Organizations"} value={"organizations"} />
-                    <CheckboxComponent name={"Events"} value={"events"} />
+                    <CheckboxComponent name={"Restaurants"} value={"restaurants"} onClick={this.handleSearchType}
+                    onChange={this.handleSearchType} />
+
+                    <div className={"border border-8 border-red-500 flex flex-col items-center gap-4 p-2"}>
+                        <label className={"text-red-500 font-bold"}>Coming Soon...</label>
+                        <CheckboxComponent name={"Organizations"} value={"organizations"} />
+                        <CheckboxComponent name={"Events"} value={"events"} />
+                    </div>
                 </div>
 
                 <div className={"search-tools m-8"}>
