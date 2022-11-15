@@ -91,7 +91,7 @@ class Toolbar extends Component {
                         <ButtonComponent name={"Search by Name"} onClick={this.toggleNameSearch} />
 
                         <div className={`${this.state.nameSearch ? "" : "hidden"} w-full`}>
-                            <Search restaurantName={this.handleNameSearch} />
+                            <Search type={this.state.searchType} restaurantName={this.handleNameSearch} />
                         </div>
 
                     </div>

@@ -7,7 +7,7 @@ const api_url = process.env.REACT_APP_API_URL
 class Search extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ""}
+        this.state = {type: "", value: ""}
 
         this.handleSearch = this.handleSearch.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -19,8 +19,9 @@ class Search extends Component {
 
     async handleSubmit(event) {
         event.preventDefault()
-        const response = await axios.get(`${api_url}/name/${this.titleCase(this.state.value)}`)
+        const response = await axios.get(`${api_url}/${this.props.type}/name/${this.titleCase(this.state.value)}`)
         const data = response.data
+        console.log(data)
         this.props.restaurantName(data)
     }
 

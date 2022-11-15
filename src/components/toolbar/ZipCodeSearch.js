@@ -7,7 +7,7 @@ const api_url = process.env.REACT_APP_API_URL
 class ZipCodeSearch extends Component {
     constructor(props) {
         super(props);
-        this.state = {zip: ""}
+        this.state = {url: "", zip: ""}
 
         this.handleZip = this.handleZip.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
