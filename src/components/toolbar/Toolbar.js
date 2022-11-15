@@ -75,14 +75,14 @@ class Toolbar extends Component {
                 <p className={"text-2xl text-center p-2 m-6"}>Find me...</p>
 
                 <div className={"search-select flex flex-row justify-center items-center gap-4 m-6"}>
-                    <CheckboxComponent name={"Restaurants"} value={"restaurants"} onClick={this.handleSearchType}
-                    onChange={this.handleSearchType} />
+                    <CheckboxComponent name={"Restaurants"} value={"restaurants"} onChange={this.handleSearchType} />
 
                     <div className={"border border-8 border-red-500 flex flex-col items-center gap-4 p-2"}>
                         <label className={"text-red-500 font-bold"}>Coming Soon...</label>
-                        <CheckboxComponent name={"Organizations"} value={"organizations"} />
-                        <CheckboxComponent name={"Events"} value={"events"} />
+                        <CheckboxComponent name={"Organizations"} value={"organizations"} onChange={this.handleSearchType} />
+                        <CheckboxComponent name={"Events"} value={"events"} onChange={this.handleSearchType} />
                     </div>
+
                 </div>
 
                 <div className={"search-tools m-8"}>
@@ -91,7 +91,7 @@ class Toolbar extends Component {
                         <ButtonComponent name={"Search by Name"} onClick={this.toggleNameSearch} />
 
                         <div className={`${this.state.nameSearch ? "" : "hidden"} w-full`}>
-                            <Search type={this.state.searchType} restaurantName={this.handleNameSearch} />
+                            <Search type={this.state.searchType} name={this.handleNameSearch} />
                         </div>
 
                     </div>
