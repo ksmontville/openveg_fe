@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 
+const states_data = ["MA", "NH", "NY", "VT"]
 const api_url = process.env.REACT_APP_API_URL
 
 class StateSelect extends Component {
@@ -51,12 +52,23 @@ class StateSelect extends Component {
             {"name":"Wisconsin","abbreviation":"WI"},{"name":"Wyoming","abbreviation":"WY"}]})
     }
 
+    strikeStr(str) {
+        let new_str = ""
+        const str_split = str.split("")
+
+        for (let i = 0; i < str_split.length; i++) {
+            new_str += str_split[i] + "\u0336"
+        }
+
+        return new_str
+    }
+
     render() {
         const { usStates } = this.state
 
         const usStatesList = usStates.map((state) => {
             return (
-                <option key={state.abbreviation} value={state.name}>{state.name}</option>
+                <option key={state.abbreviation} value={state.name}>{states_data.includes(state.abbreviation) ? state.name : this.strikeStr(state.name) }</option>
             )
         })
         return(

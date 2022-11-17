@@ -62,68 +62,67 @@ class Toolbar extends Component {
         this.setState({stateSearch: !this.state.stateSearch})
     }
 
+    strikeStr(str) {
+        let new_str = ""
+        const str_split = str.split("")
+
+        for (let i = 0; i < str_split.length; i++) {
+            new_str += str_split[i] + "\u0336"
+        }
+
+        return new_str
+    }
+
     render() {
         return(
-            <div className={""}>
+            <div className={"search-tools"}>
 
-                <div className={"dev-note flex flex-col items-center justify-center font-bold underline text-red-400 text-center text-xl m-6"}>
-                    <p>** THIS APP IS MINIMALLY FUNCTIONAL WITH ONGOING DEVELOPMENT **</p>
-                    <p>
-                        NOTE: Currently only have data for New Hampshire, New York, Massachusetts, and Vermont.
-                    </p>
-                </div>
-
-                <p className={"text-2xl text-center p-2 m-6"}>Find me...</p>
+                <p className={"text-2xl text-center p-2 m-6"}>Search for...</p>
 
                 <div className={"search-select flex flex-row justify-center items-center gap-4 m-6"}>
                     <CheckboxComponent name={"Restaurants"} value={"restaurants"} onChange={this.handleSearchType} />
-
-                    <div className={"border border-8 border-red-500 flex flex-col items-center gap-4 p-2"}>
-                        <label className={"text-red-500 font-bold"}>Coming Soon...</label>
-                        <CheckboxComponent name={"Organizations"} value={"organizations"} onChange={this.handleSearchType} />
-                        <CheckboxComponent name={"Events"} value={"events"} onChange={this.handleSearchType} />
-                    </div>
-
+                    <CheckboxComponent name={this.strikeStr("Organizations")} value={"organizations"} onChange={this.handleSearchType} />
+                    <CheckboxComponent name={this.strikeStr("Events")} value={"events"} onChange={this.handleSearchType} />
                 </div>
 
-                <div className={"search-tools m-8"}>
+                <p className={"text-2xl text-center p-2 m-6"}>Search by...</p>
 
-                    <div className={"flex flex-col justify-center items-center m-4"}>
-                        <ButtonComponent name={"Search by Name"} onClick={this.toggleNameSearch} />
+                <div className={"search-buttons flex flex-row justify-center items-center gap-4 m-6"}>
+                    <ButtonComponent name={"Name"} onClick={this.toggleNameSearch} />
+                    <ButtonComponent name={"Zip Code"} onClick={this.toggleZipSearch}/>
+                    <ButtonComponent name={"State"} onClick={this.toggleStateSearch} />
+                </div>
 
-                        <div className={`${this.state.nameSearch ? "" : "hidden"} w-full`}>
+                <div className={"search-inputs"}>
+                     <div className={`${this.state.nameSearch ? "" : "hidden"} w-full`}>
                             <Search type={this.state.searchType} searchName={this.handleNameSearch} />
-                        </div>
-
                     </div>
 
-                    <div className={"flex flex-col justify-center items-center m-4"}>
-                        <ButtonComponent name={"Search by Zip Code"} onClick={this.toggleZipSearch}/>
-
-                        <div className={`${this.state.zipSearch ? "" : "hidden"} w-full`}>
+                    <div className={`${this.state.zipSearch ? "" : "hidden"} w-full`}>
                             <ZipCodeSearch type={this.state.searchType} data={this.handleZipCodeSearch} zip={this.handleZipCodeSearch} />
-                        </div>
-
                     </div>
 
-                    <div className={"flex flex-col justify-center items-center m-4"}>
-                        <ButtonComponent name={"Search by State"} onClick={this.toggleStateSearch} />
-
-                        <div className={`${this.state.stateSearch ? "" : "hidden"} w-full`}>
+                    <div className={`${this.state.stateSearch ? "" : "hidden"} w-full`}>
                             <StateSelect type={this.state.searchType} getSelectedState={this.handleStateSearch}
                                          vegan={this.state.vegan} submit={this.handleSubmit} />
-                        </div>
                     </div>
 
-                    <Filter type={this.state.searchType} param={this.state.searchParam} zip={this.state.searchZip}
-                            isChecked={this.state.checked} vegan={this.handleVeganFilter}
-                            veganData={this.handleVeganData} currentState={this.state.selectedState} currentName={this.state.searchName} />
 
-                    <List listData={this.state.data} />
+                    <div>
+                        <Filter type={this.state.searchType} param={this.state.searchParam} zip={this.state.searchZip}
+                                isChecked={this.state.checked} vegan={this.handleVeganFilter}
+                                veganData={this.handleVeganData} currentState={this.state.selectedState} currentName={this.state.searchName} />
+                    </div>
 
                 </div>
 
+                <div>
+
+                        <List listData={this.state.data} />
+                </div>
             </div>
+
+
         )
     }
 }

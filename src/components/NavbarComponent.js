@@ -27,7 +27,7 @@ class NavbarComponent extends Component {
 
                 <div className={"flex flex-row justify-between items-center border-b-4 p-2"}>
                     <div className={"nav-left"}>
-                        <a className={"nav-logo text-xl"} href={"test"}>OpenVeg</a>
+                        <a className={"nav-logo text-xl"} href={"https://www.openveg.app"} target={""}>OpenVeg</a>
                     </div>
 
                     {/*Navbar icon/toggle*/}
@@ -42,9 +42,9 @@ class NavbarComponent extends Component {
                 <div className={`nav-links bg-green-600 border-4 border-t-0 border-solid border-white rounded-b flex flex-col justify-center items-start gap-4 p-2 
                 ${this.state.isExpanded ? "" : "hidden"} md:bg-black md:flex-row md:inline-flex`}>
 
-                    <a href={"test"} onClick={this.handleClick}>About</a>
-                    <a href={"test"} onClick={this.handleClick}>API</a>
-                    <a href={"test"} onClick={this.handleClick}>Login</a>
+                    <a href={"https://www.google.com"} target={""} onClick={this.handleClick}>About</a>
+                    <a href={"https://www.google.com"} target={""} onClick={this.handleClick}>API</a>
+                    <a href={"https://www.google.com"} target={""} onClick={this.handleClick}>Login</a>
 
                 </div>
 

@@ -32,6 +32,7 @@ class Search extends Component {
         return str.join(' ')
     }
 
+
     render() {
         return(
             <div className={"m-4"}>

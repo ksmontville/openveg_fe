@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 
 class ListItem extends Component {
 
+    titleCase(str) {
+        str = str.toLowerCase().split(' ')
+        for(let i = 0; i < str.length; i++) {
+            str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1)
+        }
+        return str.join(' ')
+    }
+
     render() {
         const {listData} = this.props
         return(
@@ -21,11 +29,10 @@ class ListItem extends Component {
                         {listData.address}
                     </li>
                     <li>
-                        {listData.city}, {listData.state} {listData.zip}
+                        {listData.city ? this.titleCase(listData.city) : "[City]"}, {this.titleCase(listData.state)} {listData.zip ? listData.zip : "[Zip]"}
                     </li>
                     <li>
-                        {listData.vegan ? "Vegan" : "Vegetarian"}
-                        {/*Vegan: {restaurantData.vegan.toString()}*/}
+                        {listData.vegan ? "Vegan" : "Vegan Options"}
                     </li>
                 </ul>
             </li>
