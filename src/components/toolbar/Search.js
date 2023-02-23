@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import ButtonComponent from '../ButtonComponent'
+import ButtonComponent from '../global/ButtonComponent'
 
 const api_url = process.env.REACT_APP_API_URL
 

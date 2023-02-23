@@ -19,9 +19,9 @@ class ListItem extends Component {
                     <li>
                         {listData.name}
                     </li>
-                    {/*<li>*/}
-                    {/*    {restaurantData.description}*/}
-                    {/*</li>*/}
+                    <li>
+                        {listData.description}
+                    </li>
                     <li>
                         <a className={"text-green-200 underline"} href={listData.web.toString()} target="_blank" rel="noreferrer">{listData.web}</a>
                     </li>

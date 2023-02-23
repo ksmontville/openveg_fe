@@ -15,7 +15,6 @@ class NavbarComponent extends Component {
     }
 
     handleClick (event) {
-        event.preventDefault()
         this.handleIsExpanded()
     }
 
@@ -27,7 +26,7 @@ class NavbarComponent extends Component {
 
                 <div className={"flex flex-row justify-between items-center border-b-4 p-2"}>
                     <div className={"nav-left"}>
-                        <a className={"nav-logo text-xl"} href={"https://www.openveg.app"} target={""}>OpenVeg</a>
+                        <a className={"nav-logo text-xl"} href={"/"} target={""}>OpenVeg</a>
                     </div>
 
                     {/*Navbar icon/toggle*/}
@@ -42,9 +41,11 @@ class NavbarComponent extends Component {
                 <div className={`nav-links bg-green-600 border-4 border-t-0 border-solid border-white rounded-b flex flex-col justify-center items-start gap-4 p-2 
                 ${this.state.isExpanded ? "" : "hidden"} md:bg-black md:flex-row md:inline-flex`}>
 
-                    <a href={"https://www.google.com"} target={""} onClick={this.handleClick}>About</a>
-                    <a href={"https://www.google.com"} target={""} onClick={this.handleClick}>API</a>
-                    <a href={"https://www.google.com"} target={""} onClick={this.handleClick}>Login</a>
+                    <a href={"/search"} target={""} onClick={this.handleClick}>Search</a>
+                    <a className={"line-through"} href={"/contribute"} target={""} onClick={this.handleClick}>Contribute</a>
+                    <a className={"line-through"} href={"/about"} target={""} onClick={this.handleClick}>About</a>
+                    <a className={"line-through"} href={"/api"} target={""} onClick={this.handleClick}>API</a>
+                    <a className={"line-through"} href={"https://www.google.com"} target={""} onClick={this.handleClick}>Login</a>
 
                 </div>
 

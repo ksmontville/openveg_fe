@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import CheckboxComponent from '../CheckboxComponent'
-import ButtonComponent from '../ButtonComponent'
+import CheckboxComponent from '../global/CheckboxComponent'
+import ButtonComponent from '../global/ButtonComponent'
 import Filter from './Filter'
 import Search from './Search'
 import StateSelect from './StateSelect'
