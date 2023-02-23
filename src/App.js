@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from './components/global/Header'
-import Contribute from './components/contribute/Contribute'
 import Footer from './components/global/Footer'
 import NavbarComponent from './components/global/NavbarComponent'
 import HomePage from "./routes/HomePage";
