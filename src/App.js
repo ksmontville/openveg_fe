@@ -8,6 +8,7 @@ import SearchPage from "./routes/SearchPage";
 import ContributePage from "./routes/ContributePage";
 import AboutPage from "./routes/AboutPage";
 import APIPage from "./routes/APIPage";
+import LoginPage from "./routes/LoginPage";
 
 
 class App extends Component {
@@ -20,18 +21,19 @@ class App extends Component {
                 </div>
 
                  <nav className={""}>
-                    <NavbarComponent />
+                    <BrowserRouter>
+                        <NavbarComponent />
+                        <Routes>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="search" element={<SearchPage />} />
+                            <Route path="contribute" element={<ContributePage />} />
+                            <Route path="about" element={<AboutPage />} />
+                            <Route path="api" element={<APIPage />} />
+                            <Route path="login" element={<LoginPage />} />
+                        </Routes>
+                </BrowserRouter>
                 </nav>
 
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="search/" element={<SearchPage />} />
-                        <Route path="contribute/" element={<ContributePage />} />
-                        <Route path="about/" element={<AboutPage />} />
-                        <Route path="api/" element={<APIPage />} />
-                    </Routes>
-                </BrowserRouter>
 
                 <div className={"bg-green-600 border-t-4 mt-auto"}>
                     <Footer />

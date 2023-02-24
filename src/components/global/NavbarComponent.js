@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class NavbarComponent extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class NavbarComponent extends Component {
 
                 <div className={"flex flex-row justify-between items-center border-b-4 p-2"}>
                     <div className={"nav-left"}>
-                        <a className={"nav-logo text-xl"} href={"/"} target={""}>OpenVeg</a>
+                        <Link className={"nav-logo text-xl"} to={"/"}>OpenVeg</Link>
                     </div>
 
                     {/*Navbar icon/toggle*/}
@@ -41,11 +42,11 @@ class NavbarComponent extends Component {
                 <div className={`nav-links bg-green-600 border-4 border-t-0 border-solid border-white rounded-b flex flex-col justify-center items-start gap-4 p-2 
                 ${this.state.isExpanded ? "" : "hidden"} md:bg-black md:flex-row md:inline-flex`}>
 
-                    <a href={"/search"} target={""} onClick={this.handleClick}>Search</a>
-                    <a className={"line-through"} href={"/contribute"} target={""} onClick={this.handleClick}>Contribute</a>
-                    <a className={"line-through"} href={"/about"} target={""} onClick={this.handleClick}>About</a>
-                    <a className={"line-through"} href={"/api"} target={""} onClick={this.handleClick}>API</a>
-                    <a className={"line-through"} href={"https://www.google.com"} target={""} onClick={this.handleClick}>Login</a>
+                    <Link to="/search">Search</Link>
+                    <Link to="/contribute">Contribute</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/api">API</Link>
+                    <Link to="/login">Login</Link>
 
                 </div>
 
