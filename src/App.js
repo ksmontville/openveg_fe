@@ -9,6 +9,7 @@ import ContributePage from "./routes/ContributePage";
 import AboutPage from "./routes/AboutPage";
 import APIPage from "./routes/APIPage";
 import LoginPage from "./routes/LoginPage";
+import ErrorPage from "./routes/ErrorPage";
 
 
 class App extends Component {
@@ -23,14 +24,15 @@ class App extends Component {
                  <nav className={""}>
                     <BrowserRouter>
                         <NavbarComponent />
-                        <Routes>
-                            <Route path="/" element={<HomePage />} />
-                            <Route path="search" element={<SearchPage />} />
-                            <Route path="contribute" element={<ContributePage />} />
-                            <Route path="about" element={<AboutPage />} />
-                            <Route path="api" element={<APIPage />} />
-                            <Route path="login" element={<LoginPage />} />
-                        </Routes>
+                            <Routes>
+                                <Route path="/" element={<HomePage />} />
+                                <Route path="search" element={<SearchPage />} />
+                                <Route path="contribute" element={<ContributePage />} />
+                                <Route path="about" element={<AboutPage />} />
+                                <Route path="api" element={<APIPage />} />
+                                <Route path="login" element={<LoginPage />} />
+                                <Route path="*" element={<ErrorPage />} />
+                            </Routes>
                 </BrowserRouter>
                 </nav>
 
