@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 
-const states_data = ["CA", "MA", "NH", "NY", "VT"]
+const states_data = ["CA", "CT", "MA", "ME", "NH", "NY", "VT"]
 const api_url = process.env.REACT_APP_API_URL
 
 class StateSelect extends Component {
