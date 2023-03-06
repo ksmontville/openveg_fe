@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 
-const states_data = ["CA", "CT", "MA", "ME", "NH", "NJ", "NY", "RI", "VT"]
+const states_data = ["CA", "CT", "MA", "ME", "NH", "NJ", "NY", "PA", "RI", "VT"]
 const api_url = process.env.REACT_APP_API_URL
 
 class StateSelect extends Component {
@@ -74,7 +74,7 @@ class StateSelect extends Component {
         return(
             <div className={"m-4 text-black"}>
                 <form className={"flex flex-col justify-center items-center gap-y-2"}>
-                    <label className="text-white">Search by State</label>
+                    <label className="text-white">Search by State (strike-through states coming soon!)</label>
                     <select className={"w-2/3 md:w-1/3"} onChange={this.handleSelect}>
                         <option value="null" defaultValue="">---</option>
                         <option value="" defaultValue="">Show All</option>
